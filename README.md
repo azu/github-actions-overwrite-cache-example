@@ -48,9 +48,7 @@ jobs:
         continue-on-error: true
         run: |
           gh extension install actions/gh-actions-cache
-          if ${{ steps.cache-restore.outputs.cache-hit == 'true' }}; then
-            gh actions-cache delete "${{ env.cache-key }}" --confirm
-          fi
+          gh actions-cache delete "${{ env.cache-key }}" --confirm
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Save Cache
