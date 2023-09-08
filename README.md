@@ -42,8 +42,6 @@ jobs:
           echo "Current: $current_date"
           # Save current time to ./cache/time
           echo "$current_date" > ./cache/time
-        env:
-          CACHE_DIR: ./cache
       # overwrite cache key: delete previous and save current
       - name: Delete Previous Cache
         if: ${{ steps.cache-restore.outputs.cache-hit }}
