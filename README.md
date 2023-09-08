@@ -2,6 +2,8 @@
 
 GitHub Actions does not support overwrite cache with same key.
 
+- [Feature request: option to update cache · Issue #342 · actions/cache](https://github.com/actions/cache/issues/342)
+
 As workaround, you can use `actions/cache/restore` and [gh-actions-cache](https://github.com/actions/gh-actions-cache), and `actions/cache/save`. 
 
 ```yaml
