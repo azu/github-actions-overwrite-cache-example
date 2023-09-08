@@ -19,6 +19,7 @@ jobs:
   calendar:
     runs-on: ubuntu-latest
     env:
+      # overwrite cache key
       cache-key: your-cache-key
     steps:
       # This job implements overwrite cache using restore + delete + save
@@ -43,7 +44,7 @@ jobs:
           echo "$current_date" > ./cache/time
         env:
           CACHE_DIR: ./cache
-      # overwrite cache key
+      # overwrite cache key: delete previous and save current
       - name: Delete Previous Cache
         if: ${{ steps.cache-restore.outputs.cache-hit }}
         continue-on-error: true
