@@ -16,7 +16,7 @@ permissions:
   contents: read
   actions: write # require to delete cache
 jobs:
-  calendar:
+  update:
     runs-on: ubuntu-latest
     env:
       # overwrite cache key
@@ -37,7 +37,7 @@ jobs:
           # generate current time to ./cache/time
           mkdir -p ./cache
           previous_date=$(cat ./cache/time || echo "No previous date")
-          current_date=$(date +%s)
+          current_date=$(date "+%Y-%m-%d %H:%M:%S")
           echo "Previous: $previous_date"
           echo "Current: $current_date"
           # Save current time to ./cache/time

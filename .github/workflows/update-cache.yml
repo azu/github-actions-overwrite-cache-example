@@ -5,7 +5,7 @@ permissions:
   contents: read
   actions: write # require to delete cache
 jobs:
-  calendar:
+  update:
     runs-on: ubuntu-latest
     env:
       cache-key: your-cache-key
