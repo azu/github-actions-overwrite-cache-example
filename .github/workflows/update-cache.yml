@@ -25,7 +25,7 @@ jobs:
           # generate current time to ./cache/time
           mkdir -p ./cache
           previous_date=$(cat ./cache/time || echo "No previous date")
-          current_date=$(date +%s)
+          current_date=$(date)
           echo "Previous: $previous_date"
           echo "Current: $current_date"
           # Save current time to ./cache/time
